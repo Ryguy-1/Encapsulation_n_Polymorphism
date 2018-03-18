@@ -15,20 +15,71 @@ package _01_introduction_to_encapsulation;
  * 
  * */
 
-
 public class EncapsulateTheData {
-	//1. Encapsulate the member variables.
-	//   Add restrictions to the setters according to the comment.
-	
-	//2. Create a new JUnit Test case and write tests to verify that 
-	//   the member variables' getters and setters are working
-	
-	int itemsRecieved; //must not be negative. All negative arguments get set to 0.
-	float degreesTurned; //must be locked between 0.0 and 360.0 inclusive.
-	String nomenclature = " "; //must not be set to a blank string. Blank Strings get set to a space
-	Object memberObj; //can be any object type except String. Strings get turned into objects.
-	
+	// 1. Encapsulate the member variables.
+	// Add restrictions to the setters according to the comment.
+
+	// 2. Create a new JUnit Test case and write tests to verify that
+	// the member variables' getters and setters are working
+
+	private int itemsRecieved; // must not be negative. All negative arguments get set to 0.
+	private float degreesTurned; // must be locked between 0.0 and 360.0 inclusive.
+	private String nomenclature = " "; // must not be set to a blank string. Blank Strings get set to a space
+	private Object memberObj; // can be any object type except String. Strings get turned into objects.
+
 	public static void main(String[] args) {
+
+	}
+
+	public int iRG() {
+		return itemsRecieved;
+	}
+
+	public void iRS(int itemsRecieved) {
+		if(itemsRecieved < 0) {
+			itemsRecieved = 0;
+		}
+		this.itemsRecieved = itemsRecieved;
+	}
+	
+	public float dTG() {
+		return degreesTurned;
+	}
+	
+	public void dTS(float degreesTurned){
+		if(degreesTurned>360) {
+			this.degreesTurned=360;
+		}else if(degreesTurned<0) {
+			this.degreesTurned=0;
+		}
+		else {
+			this.degreesTurned=degreesTurned;
+		}
+	}
+	
+	public String nG() {
+		return nomenclature;
+	}
+	
+	public void nS(String nomenclature) {
+		if(nomenclature.equals("")){
+			this.nomenclature=" ";
+		}else {
+			this.nomenclature=nomenclature;
+			
+		}
+	}
+	public Object mG() {
+		return memberObj;
+	}
+	
+	public void mS(Object memberObject) {
 		
+		if(memberObject instanceof String) {
+			Object o = new Object();
+			this.memberObj=o;
+		}else {
+			this.memberObj=memberObject;
+		}
 	}
 }
