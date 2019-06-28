@@ -6,10 +6,14 @@ import java.util.ArrayList;
 public abstract class Polymorph {
     int x;
     int y;
+    int width;
+    int height;
     
-    Polymorph(int x, int y){
+    Polymorph(int x, int y, int width, int height){
    	 this.x = x;
    	 this.y = y;
+   	 this.height=height;
+   	 this.width=width;
     }
     
     public ArrayList get() {
@@ -19,9 +23,11 @@ public abstract class Polymorph {
     return list;
     }
     
-    public void set(int x, int y) {
+    public void set(int x, int y, int width, int height) {
     	this.x=x;
     	this.y=y;
+    	this.width=width;
+    	this.height=height;
     }
     
     public void update(){
