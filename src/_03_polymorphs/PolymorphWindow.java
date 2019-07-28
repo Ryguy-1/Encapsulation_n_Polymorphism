@@ -59,6 +59,7 @@ public class PolymorphWindow extends JPanel implements ActionListener, MouseMoti
    	 g.fillRect(0, 0, 500, 500);
    	
    	 //draw polymorph
+   	 //they think its not something I am doing that's giving the null pointer error...
    	System.out.println(polys.size());
    	 for(Polymorph p:polys) {
    		 p.draw(g);
