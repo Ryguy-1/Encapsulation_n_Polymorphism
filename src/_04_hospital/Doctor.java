@@ -12,6 +12,8 @@ public abstract class Doctor {
 	public ArrayList<Patient> getPatients(){
 		return patients;
 	}
-	
+	public boolean performsSurgery() {
+		return true;
+	}
 	
 }

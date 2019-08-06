@@ -12,5 +12,8 @@ public class Surgeon extends Doctor{
 	public ArrayList<Patient> getPatients(){
 		return patients;
 	}
+	public boolean performsSurgery() {
+		return true;
+	}
 	
 }
