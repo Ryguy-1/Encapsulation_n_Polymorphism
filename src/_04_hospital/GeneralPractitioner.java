@@ -4,13 +4,8 @@ import java.util.ArrayList;
 
 public class GeneralPractitioner extends Doctor{
 
-	ArrayList<Patient> patients = new ArrayList<Patient>();
-	
-	public void addPatient(Patient p) {
-		patients.add(p);
-	}
-	public ArrayList<Patient> getPatients(){
-		return patients;
+	public boolean makesHouseCalls() {
+		return true;
 	}
 	
 }

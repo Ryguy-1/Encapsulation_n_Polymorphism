@@ -1,19 +1,33 @@
-package _04_hospital;
+package _04_hospital;	
 
 import java.util.ArrayList;
 
-public abstract class Doctor {
+public class Doctor {
 	
 	ArrayList<Patient> patients = new ArrayList<Patient>();
-	
-	public void addPatient(Patient p) {
-		patients.add(p);
-	}
+
 	public ArrayList<Patient> getPatients(){
 		return patients;
 	}
 	public boolean performsSurgery() {
-		return true;
+		return false;
+	}
+	public boolean makesHouseCalls() {
+		return false;
+	}
+	public void assignPatient(Patient patient) throws DoctorFullException {
+		if(patients.size()<3) {
+			patients.add(patient);
+		}else {
+			throw new DoctorFullException();
+		}
+		
+		
+	}
+	public void doMedicine() {
+		for(Patient p: patients) {
+			p.checkPulse();
+		}
 	}
 	
 }
